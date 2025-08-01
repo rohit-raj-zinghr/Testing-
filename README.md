@@ -1,28 +1,23 @@
 <a name="readme-top"></a>
 
-### Project Overview
+📘 Project Overview
+The Real-Time Attendance (TNA) system is designed to automate and streamline employee attendance processing using biometric swipes data pr Mobile Punches. It integrates with our RTA Engine to ensure accurate, rule-based attendance status updates and compliance across various scenarios, such as shifts, late/early punches, OT and backdated corrections(if applicable).
 
-The Real-Time Attendance (TNA) system  designed to streamline and automate employee attendance processing. The system utilizes a series of SQL stored procedures to:
+🔧 Core Functionalities
+i) Manage Shift Rules
+Defines and enforces rules related to shift timings, overtime, night differentials, flexible shifts, and buffer windows (pre/post shift limits).
 
+ii) Track Attendance Metrics
+Captures and validates punch-in and punch-out data to determine total working hours, late comings, early goings, and shift adherence.
 
+iii) Calculate Compliance
+Applies grace period logic for late arrivals and early departures, factoring in configurable thresholds and allowed occurrences within an attendance cycle.
 
+iv) Update Attendance Records
+Maintains updated and accurate attendance details in the Rostering and other core tables, including fields like Present, Half Day, Absent, OT hours, ND hours, and capped attendance timings.
 
-
-i) Manage Shift Rules: Define and apply rules for overtime and shift-specific calculations.
-
-
-
-ii) Track Attendance Metrics: Monitor punch-in and punch-out times, ensuring accurate attendance records.
-
-
-
-iii) Calculate Compliance: Validate late arrivals and early departures against predefined grace periods.
-
-
-
-iv) Update Records: Maintain up-to-date attendance data in the Rostering table, including metrics like overtime and attendance results.
-
-v)Process Backdated Attendance: In scenarios such as regularization, shift changes, day type or group change, the system recalculates attendance for the affected day or date range to ensure accuracy.
+v) Process Backdated Attendance
+Automatically recalculates attendance in cases of shift change, regularization, leave approval, or group/department updates to ensure consistency across records.
 ## 🚀 Cool features of TNA
 
 - 🆕 [**Automated Attendance Processing:Eliminates manual tracking with real-time calculations.**]
