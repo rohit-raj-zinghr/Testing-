@@ -80,7 +80,7 @@ Step 7: Update ProcessBiometricSwipesForFlatTable with the last processed swipe(
 This guide outlines the sequential process for executing **BackDated Attendance updation** in the **Time and Attendance (TNA)** system.
 
 ## 📌 Job Reference  
-**Job Name:** `Backdated_Attendance_job_for`  
+**Job Name:** `Backdated_Attendance_job`  
 **Objective:** To process and finalize backdated attendance records, ensuring rule compliance and data readiness for reporting. <br>
 ✅ Step 1: Generate the FlatTable required for backdated data processing
 EXEC [TNA].[SetEmpShiftJSONData]
