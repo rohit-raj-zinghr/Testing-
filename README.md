@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-📘 Project Overview
+📘 Project Overview <br>
 The Real-Time Attendance (TNA) system is designed to automate and streamline employee attendance processing using biometric swipes data pr Mobile Punches. It integrates with our RTA Engine to ensure accurate, rule-based attendance status updates and compliance across various scenarios, such as shifts, late/early punches, OT and backdated corrections(if applicable).
 
 🔧 Core Functionalities
