@@ -56,16 +56,10 @@ Provides pre-processed OT and ND metrics as input to payroll systems  with speci
 Implements sandwich rules that apply Rest Days or Off Days within a leave period as paid leave, based on configurations.
 
 
-🛠️ Real-Time Attendance (TNA) Setup Steps for New Client/Database
-Step 1: Duplicate the live database with the latest group and shift mappings.
+🛠️ Real-Time Attendance (TNA) Setup Steps for New Client/Database: <br>
+Step 1: Duplicate the live database with the latest group,shift mappings and latest configured Rules.
 
-Step 2: Deploy patches for:
-
-New Rostering Screen
-
-New Setup Screen
-
-All required Microservices
+Step 2: Deploy patches for:New Rostering Screen,New Setup Screen and All required Microservices.
 
 Step 3: Synchronize live biometric swipes into the new database.
 
@@ -73,21 +67,9 @@ Step 4: Execute all latest scripts (to be shared via Zira ID).
 
 Step 5: Configure OT slabs using the new Setup Screen.
 
-Step 6: Setup all required jobs, including:
+Step 6: Setup all required jobs, including:Flat table creation,Extra time JSON creation,No swipes processing and Biometric swipe processing.
 
-Flat table creation
-
-Extra time JSON creation
-
-No swipes processing
-
-Biometric swipe processing
-
-Step 7: Update ProcessBiometricSwipesForFlatTable with the last processed swipe.
-
-Attendance jobs will process from this point onward.
-
-Similarly, update the respective table for regularization jobs.
+Step 7: Update ProcessBiometricSwipesForFlatTable with the last processed swipe(Attendance jobs will process from this point onward).
 
 **⏲️ Scheduled Jobs**
 - Step1:Daily Flat Table Creation Job which is Scheduled Once daily. (e.g., at 11:30 PM) using step5.
