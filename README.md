@@ -29,10 +29,11 @@ Calculates PreOT, PostOT, RDOT(RestDay OT), SHOT(Special Holiday OT), LHOT(Legal
 🆕 Grace Period Validation
 Dynamically tracks and restricts late-in/early-out entries based on allowed counts and duration, triggering Half Day or Absent statuses on violations.
 
-🆕 Single/No Swipe Handling
+🆕 Single Swipe Handling
 Single Swipe: Marked Present if employee is mapped for single swipe attendance; otherwise Absent unless regularization/leave/OD exists.
 
-No Swipe: Marked Present for high-level officers if mapped; otherwise Absent unless on leave/holiday/off.
+🆕 No Swipe Handling: Marked Present for high-level officers if mapped; otherwise Absent unless on leave/holiday/off.
+
 🆕 Flexi Shift Support
 Handles cross-day punch conditions intelligently, ensuring correct attendance for employees with flexible working patterns.
 
