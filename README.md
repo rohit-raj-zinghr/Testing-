@@ -1,9 +1,9 @@
 <a name="readme-top"></a>
 
-📘 Project Overview <br>
+📘 Project Overview: <br>
 The Real-Time Attendance (TNA) system is designed to automate and streamline employee attendance processing using biometric swipes data pr Mobile Punches. It integrates with our RTA Engine to ensure accurate, rule-based attendance status updates and compliance across various scenarios, such as shifts, late/early punches, OT and backdated corrections(if applicable).
 
-🔧 Core Functionalities
+🔧 Core Functionalities:
 i) Manage Shift Rules
 Defines and enforces rules related to shift timings, overtime, night differentials, flexible shifts, and buffer windows (pre/post shift limits).
 
@@ -20,9 +20,39 @@ v) Process Backdated Attendance
 Automatically recalculates attendance in cases of shift change, regularization, leave approval, or group/department updates to ensure consistency across records.
 ## 🚀 Cool features of TNA
 
-- 🆕 [**Automated Attendance Processing:Eliminates manual tracking with real-time calculations.**]
-- 🆕 [**Overtime Management:Calculates PreOT, PostOT, and other overtime metrics based on shift and day type.**]
-- 🆕 [**Grace Period Validation:Tracks allowable instances of late arrivals and early departures.**]
+🆕 Automated Attendance Processing
+Real-time tracking and processing eliminate manual intervention, reducing human errors.
+
+🆕 Overtime Management
+Calculates PreOT, PostOT, RDOT(RestDay OT), SHOT(Special Holiday OT), LHOT(LegalHoliday OT), and NDOT(Normal Day OT) based on shift definitions and daytype(holiday/rest/working).
+
+🆕 Grace Period Validation
+Dynamically tracks and restricts late-in/early-out entries based on allowed counts and duration, triggering Half Day or Absent statuses on violations.
+
+🆕 Single/No Swipe Handling
+Single Swipe: Marked Present if employee is mapped for single swipe attendance; otherwise Absent unless regularization/leave/OD exists.
+
+No Swipe: Marked Present for high-level officers if mapped; otherwise Absent unless on leave/holiday/off.
+🆕 Flexi Shift Support
+Handles cross-day punch conditions intelligently, ensuring correct attendance for employees with flexible working patterns.
+
+🆕 Shift Capping
+Adjusts punch times to align with capped shift windows (e.g., early punches capped to 10:00 AM, late punches to 6:30 PM) for consistency.
+
+🆕 Night Differential Calculation
+Calculates hours worked between 10:00 PM and 6:00 AM, especially for Southeast Asia-based operations. 
+
+🆕 Productive Hours (CKC)
+Only valid IN-OUT swipe pairs in correct sequence (no interruptions) are counted. Productive hours exclude tea breaks, outings, and other breaks. Unmatched swipes trigger regularization alerts.
+
+🆕 Weekly Attendance Shortfall Detection
+Calculates shortfall in total weekly working hours for compliance, particularly for Jio employees.
+
+🆕 L1 Payroll Integration
+Provides pre-processed OT and ND metrics as input to payroll systems  with specific parameters like RDOT, NDHours, SHOTExcess, etc.
+
+🆕 Leave Sandwiching
+Implements sandwich rules that apply Rest Days or Off Days within a leave period as paid leave, based on configurations.
 
 
 **Real Time Attendance(TNA) Steps:**
