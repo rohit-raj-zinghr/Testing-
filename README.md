@@ -56,18 +56,38 @@ Provides pre-processed OT and ND metrics as input to payroll systems  with speci
 Implements sandwich rules that apply Rest Days or Off Days within a leave period as paid leave, based on configurations.
 
 
-**Real Time Attendance(TNA) Steps:**
+🛠️ Real-Time Attendance (TNA) Setup Steps for New Client/Database
+Step 1: Duplicate the live database with the latest group and shift mappings.
 
-- Step1:[ Create and execute the stored procedure TNA.SetExtraTimeRule_Z2 ](https://github.com/zinghrcore/z2-tna-db/blob/master/25.%5BTNA%5D.%5BSetExtraTimeRule_Z2%5D.sql)
-- Step2:[Set the database compatibility level to 150.](https://github.com/zinghrcore/z2-tna-db/blob/master/00.COMPATIBILITY_LEVEL)
-- Step3:[If not exist,Add DayType Column in Rostering](https://github.com/zinghrcore/z2-tna-db/blob/master/0field%20master%20and%20rostering%20daytype.sql)
-- Step4:[Create table TNA.ShiftWithPrePost](https://github.com/zinghrcore/z2-tna-db/blob/master/001.shiftwithprepost.sql)
-- Step5:[For FlatTable Population create SP  TNA. Setempshiftjson ](https://github.com/zinghrcore/z2-tna-db/blob/master/26.%20%5BTNA%5D.%5BSetEmpShiftJSONData%5D.sql)
-- Step6:[Create stored procedure  TNA.LateComingCalculationOnPunchOut_Z2 ](https://github.com/zinghrcore/z2-tna-db/blob/master/17.%5BTNA%5D.%5BLateComingCalculationOnPunchOut_Z2%5D.sql)
-- Step7:[Create stored procedure  TNA.EarlygoingCalculationOnPunchOut_Z2 ](https://github.com/zinghrcore/z2-tna-db/blob/master/19.%5BTNA%5D.%5BEarlyGoingCalculationOnPunchOut_Z2%5D.sql)
-- Step8:[Create stored procedure  PunchInOnLogin ](https://github.com/zinghrcore/z2-tna-db/blob/master/16.%5BTNA%5D.%5BPunchInOnLogin%5D.sql)
-- Step9:[Create stored procedure   PunchInOnThroughBio_z2 ](https://github.com/zinghrcore/z2-tna-db/blob/master/18.%5BTNA%5D.%5BPunchInOnThroughBio_z2%5D.sql)
-- Step10:[ProcessBioMetricSwipesForFlatTable](https://github.com/zinghrcore/z2-tna-db/blob/master/%5BTNA%5D.%5BProcessBioMetricSwipesForFlatTable%5D)
+Step 2: Deploy patches for:
+
+New Rostering Screen
+
+New Setup Screen
+
+All required Microservices
+
+Step 3: Synchronize live biometric swipes into the new database.
+
+Step 4: Execute all latest scripts (to be shared via Zira ID).
+
+Step 5: Configure OT slabs using the new Setup Screen.
+
+Step 6: Setup all required jobs, including:
+
+Flat table creation
+
+Extra time JSON creation
+
+No swipes processing
+
+Biometric swipe processing
+
+Step 7: Update ProcessBiometricSwipesForFlatTable with the last processed swipe.
+
+Attendance jobs will process from this point onward.
+
+Similarly, update the respective table for regularization jobs.
 
 **⏲️ Scheduled Jobs**
 - Step1:Daily Flat Table Creation Job which is Scheduled Once daily. (e.g., at 11:30 PM) using step5.
